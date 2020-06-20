@@ -1,0 +1,45 @@
+Codes to know the size of char,int and double using pointers.
+
+Program for char:
+
+#include <stdio.h>
+int main()
+{
+char c = 'g';
+char *cp = &c;
+printf("cp is 0x%08x\n",cp);
+printf("The character at cp is %c\n",*cp);
+cp=cp+2;
+printf("cp is 0x%08x\n",cp);
+return 0;
+} 
+
+
+Program for int:
+
+#include <stdio.h>
+int main()
+{
+int c = 2;
+double *cp = &c;
+printf("cp is 0x%08x\n",cp);
+printf("The value at cp is %d\n",*cp);
+cp=cp+2;
+printf("cp is 0x%08x\n",cp);
+return 0;
+}
+
+
+Program for double:
+
+#include <stdio.h>
+int main()
+{
+ double c = 2.12345;
+ double *cp = &c;
+ printf("cp is 0x%08x\n",cp);
+ printf("The value at cp is %lf\n",*cp);
+ cp=cp+2;
+ printf("cp is 0x%08x\n",cp);
+ return 0;
+} 

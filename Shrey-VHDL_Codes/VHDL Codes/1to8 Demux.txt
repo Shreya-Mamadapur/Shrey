@@ -1,0 +1,34 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+entity DeMUX_onetoeight is
+Port ( I: in STD_LOGIC; --1 input pin
+S: in STD_LOGIC_vector( 2 downto 0); --3 select pins required for 8 DEMUX outputs
+STRB_n : in STD_LOGIC; -- active low enable pin
+O : out STD_LOGIC_vector( 7 downto 0)); --8 ouput pins
+end DeMUX_onetoeight;
+architecture Behavioral of DeMUX_onetoeight is
+begin
+process(STRB_n,S,I)
+begin
+if STRB_n = '0' then -- chip is enabled only when STROBE is low
+O <= (others => '0'); -- all other pins except the selected output must be low
+if S = "000" then -- output pin O(0) is selected
+O(0) <= I; -- O(0) will follow the value in input pin
+elsif S = "001" then
+O(1) <= I;
+elsif S = "010" then
+O(2) <= I;
+elsif S = "011" then
+O(3) <= I;
+elsif S = "100" then
+O(4) <= I;
+elsif S = "101" then
+O(5) <= I;
+elsif S = "110" then
+O(6) <= I;
+elsif S = "111" then
+O(7) <= I; -- O(7) will follow the value in input pin
+end if;
+end if;
+end process;
+end Behavioral;

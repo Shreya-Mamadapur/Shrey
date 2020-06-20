@@ -1,0 +1,20 @@
+//Code to move three numbers cyclically using pointers:
+
+#include <stdio.h>
+int main()
+{
+    int a =5;
+    int b = 10;
+    int c = 15;
+    int *x = &a;
+    int *y = &b;
+    int *z = &c;
+    printf("The values before swapping are a=%d, b=%d and c=%d",*x,*y,*z); //a,b and c values are pointed by *x, *y and *z
+    int temp=*y; //storing *y's value ina temporary variable before is it being overwritten
+    *y = *x;
+    *x = *z;
+    *z = temp;
+    printf("\nThe values after swapping are a=%d, b=%d and c=%d",*x,*y,*z);
+   
+return 0;
+}

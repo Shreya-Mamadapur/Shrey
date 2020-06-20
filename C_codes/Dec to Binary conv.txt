@@ -1,0 +1,19 @@
+//Decimal to binary conversion using recursive function:
+
+void func(int n)
+{  
+     if (n==0)
+     return;
+     else
+     {
+      func(n/2);
+      printf("%d ",n%2);
+     }
+}
+
+int main()
+{ int n;
+    printf("Enter the value of n: ");
+    scanf("%d",&n);
+    func(n);
+}

@@ -1,0 +1,33 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+entity PE is
+Port ( D9,D8,D7,D6,D5,D4,D3,D2,D1 : in STD_LOGIC;
+Y3,Y2,Y1,Y0 : out STD_LOGIC);
+end PE;
+architecture Behavioral of PE is
+begin
+process(D9,D8,D7,D6,D5,D4,D3,D2,D1)
+begin
+if D9='1' then
+Y3<='1'; Y2<='0'; Y1<='0'; Y0<='1';
+elsif D8='1' then
+Y3<='1'; Y2<='0'; Y1<='0'; Y0<='0';
+elsif(D7='1') then
+Y3<='0'; Y2<='1'; Y1<='1'; Y0<='1';
+elsif(D6='1') then
+Y3<='0'; Y2<='1'; Y1<='1'; Y0<='0';
+elsif(D5='1') then
+Y3<='0'; Y2<='1'; Y1<='0'; Y0<='1';
+elsif(D4='1') then
+Y3<='0'; Y2<='1'; Y1<='0'; Y0<='0';
+elsif(D3='1') then
+Y3<='0'; Y2<='0'; Y1<='1'; Y0<='1';
+elsif(D2='1') then
+Y3<='0'; Y2<='0'; Y1<='1'; Y0<='0';
+elsif(D1='1') then
+Y3<='0'; Y2<='0'; Y1<='0'; Y0<='1';
+else
+Y3<='0'; Y2<='0'; Y1<='0'; Y0<='0';
+end if;
+end process;
+end Behavioral;
