@@ -1,0 +1,1 @@
+simplegsl.d: ../simplegsl.c
