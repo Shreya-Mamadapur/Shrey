@@ -1,3 +1,3 @@
 # Hello :)
 Shreya here. 
-This repo is everything I learn in Lambton College in Toronto.
+This repo contains everything I learn in Lambton College in Toronto.
